@@ -68,9 +68,7 @@ var countAllStrings = (arr) => {
  * @return {Array}
  */
 var splitString = (arr) => {
-  return arr.map((letters) => {
-    return 
-  })
+  return arr.split("");
 }
 
 
@@ -81,7 +79,9 @@ var splitString = (arr) => {
  * @param {String}
  * @return {Number}
  */
-var lengthOfLast;
+var lengthOfLast = (arr) => {
+  return arr[arr.length - 1].length;
+}
 
 /* #sumBelowTen
  *
@@ -90,7 +90,15 @@ var lengthOfLast;
  * @param {Array}
  * @return {Number}
  */
-var sumBelowTen;
+var sumBelowTen = (arr) => {
+ return arr.reduce((accum, constant) => {
+  if(constant < 10){
+    return accum + constant;
+  } else {
+    return accum 
+  }
+ }, 0)
+}
 
 /* #moreThanTenLetters
  *
@@ -99,7 +107,15 @@ var sumBelowTen;
  * @param {String}
  * @return {Number}
  */
-var moreThanTenLetters;
+var moreThanTenLetters = (arr) => {
+  return arr.reduce ((accum, constant) => {
+    if(constant.length > 10) {
+      return accum + 1;
+    }else{
+      return accum;
+    }
+  }, 0)
+}
 
 /* #multiplyAll
  *
@@ -108,7 +124,11 @@ var moreThanTenLetters;
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+var multiplyAll = (arr) => {
+  return arr.reduce((accum, constant) => {
+    return accum * constant;
+  }, 1)
+}
 
 /* #sumAllPositive
  *
@@ -117,7 +137,15 @@ var multiplyAll;
  * @param {String}
  * @return {Number}
  */
-var sumAllPositive;
+var sumAllPositive = (arr) => {
+  return arr.reduce((accum, constant) => {
+    if(constant > 0){
+     return accum + constant;
+    }else{
+      return accum;
+    }
+  }, 0)
+}
 
 /* #stringCountBelowThree
  *
@@ -126,7 +154,15 @@ var sumAllPositive;
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree;
+var stringCountBelowThree = (arr) => {
+  return arr.reduce((accum, constant) => {
+    if(constant.length <= 3){
+      return accum + 1;
+    }else {
+      return accum;
+    }
+  }, 0)
+}
 
 /* #doubleArray
  *
@@ -135,15 +171,32 @@ var stringCountBelowThree;
  * @param {Array} // [1,2,3]
  * @return {Array} // [2,4,6]
  */
-var doubleArray;
+var doubleArray = (arr) => {
+  return arr.map((oof) => {
+    return oof * 2;
+  })
+}
 
 /* #countObjects
  *
  * Takes in an array of objects and returns the amount of objects in the array.
  *
  * @param {Array}
- * @return {Number}
+ * @return {Number}   
  */
+
+
+var countObjects = (arr) => {
+  return arr.reduce((accum, constant) => {
+    if(typeof constant === 'object'){
+      return accum + 1;
+    }else{
+      return accum;
+    }
+  }, 0)
+}
+
+
 
 module.exports = {
   stringCount: stringCount,
@@ -152,12 +205,12 @@ module.exports = {
   countStrings: countStrings,
   countAllStrings: countAllStrings,
   splitString: splitString,
-  lengthOfLast: null,
-  sumBelowTen: null,
-  moreThanTenLetters: null,
-  multiplyAll: null,
-  sumAllPositive: null,
-  stringCountBelowThree: null,
-  doubleArray: null,
-  countObjects: null
+  lengthOfLast: lengthOfLast,
+  sumBelowTen: sumBelowTen,
+  moreThanTenLetters: moreThanTenLetters,
+  multiplyAll: multiplyAll,
+  sumAllPositive: sumAllPositive,
+  stringCountBelowThree: stringCountBelowThree,
+  doubleArray: doubleArray,
+  countObjects: countObjects
 };
