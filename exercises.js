@@ -6,7 +6,9 @@
  * @return {Number}
  * 
  */
-var stringCount;
+ var stringCount = str => {
+   return str.length;
+ }
 
 /* #arrayLength
  *
@@ -15,7 +17,9 @@ var stringCount;
  * @param {Array}
  * @return {Number}
  */
-var arrayLength;
+var arrayLength = arr => {
+  return arr.length;
+}
 
 /* #countAll
  *
@@ -24,7 +28,11 @@ var arrayLength;
  * @param {Array}
  * @return {Number}
  */
-var countAll;
+var countAll = (array) => {
+  return array.reduce((accum, constant) => {
+    return accum + constant
+  }, 0);
+}
 
 /* #countStrings
  *
@@ -33,7 +41,11 @@ var countAll;
  * @param {Array}
  * @return {Array}
  */
-var countStrings;
+var countStrings = (arr) => {
+  return arr.map((sL) => {
+    return sL.length;
+  });
+}
 
 /* #countAllStrings
  *
@@ -42,7 +54,11 @@ var countStrings;
  * @param {String}
  * @return {Number}
  */
-var countAllStrings;
+var countAllStrings = (arr) => {
+  return arr.reduce((accum, constant) => {
+    return accum + constant.length;
+  }, 0);
+}
 
 /* #splitString
  *
@@ -51,7 +67,12 @@ var countAllStrings;
  * @param {String}
  * @return {Array}
  */
-var splitString;
+var splitString = (arr) => {
+  return arr.map((letters) => {
+    return 
+  })
+}
+
 
 /* #lengthOfLast
  *
@@ -125,12 +146,12 @@ var doubleArray;
  */
 
 module.exports = {
-  stringCount: null,
-  arrayLength: null,
-  countAll: null,
-  countStrings: null,
-  countAllStrings: null,
-  splitString: null,
+  stringCount: stringCount,
+  arrayLength: arrayLength,
+  countAll: countAll,
+  countStrings: countStrings,
+  countAllStrings: countAllStrings,
+  splitString: splitString,
   lengthOfLast: null,
   sumBelowTen: null,
   moreThanTenLetters: null,
